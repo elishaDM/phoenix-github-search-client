@@ -1,0 +1,9 @@
+<div class="col-4 mb-3">
+    <div class="card">
+      <img [src]="repository.owner.avatar_url" class="card-img-top" alt="{{ repository.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ repository.name }}</h5>
+        <button mat-button color="accent" (click)="bookmark(repository)">Bookmark</button>
+      </div>
+    </div>
+  </div>

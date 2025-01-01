@@ -1,0 +1,10 @@
+<div class="container mt-5">
+    <mat-form-field class="w-100">
+      <input matInput placeholder="Search Repositories" [(ngModel)]="searchQuery" (keyup.enter)="search()">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="search()">Search</button>
+    
+    <div class="gallery mt-4 row">
+      <app-repository-item *ngFor="let repo of repositories" [repository]="repo"></app-repository-item>
+    </div>
+  </div>
