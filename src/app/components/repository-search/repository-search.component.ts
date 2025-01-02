@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { materialModules } from '@app/material.imports';
 import { GitHubService } from '@app/services/github.service';
 import { RepositoryItemComponent } from "../repository-item/repository-item.component";
@@ -11,11 +11,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './repository-search.component.html',
   styleUrls: ['./repository-search.component.scss']
 })
-export class RepositorySearchComponent {
+export class RepositorySearchComponent implements OnInit{
   searchQuery: string = '';
   repositories: any[] = [];
 
-  constructor(private gitHubService: GitHubService) {}
+  constructor(private gitHubService: GitHubService) {
+  }
+  ngOnInit(): void {
+    this.repositories = this.gitHubService.repositories();
+  }
 
   search(): void {
     if (this.searchQuery.trim()) {

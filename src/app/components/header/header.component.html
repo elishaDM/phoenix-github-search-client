@@ -1,0 +1,22 @@
+<header class="app-header">
+    <div class="container">
+        <div class="main-title">
+            <h1>GitHub Repository Search</h1>
+            <br>
+            <h3>byLipkin Elisha</h3>
+        </div>
+      <div class="header-content">
+        <div *ngIf="authService.isLoggedIn(); else loggedOut">
+            <span class="username">{{ authService.usernameSignal() }}</span>
+            <nav>
+            <a (click)="search()" routerLinkActive="active">Search</a>
+            <a (click)="bookmarks()" routerLinkActive="active">Bookmarks</a>
+            <a (click)="authService.logout()">Logout</a>
+            </nav>
+        </div>
+        <ng-template #loggedOut>
+            Please  <a (click)="login()" class="login-link"> login</a>.
+          </ng-template>
+      </div>
+    </div>
+  </header>

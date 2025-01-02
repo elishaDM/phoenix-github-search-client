@@ -1,0 +1,19 @@
+.bookmark-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: transparent;
+    border: 2px solid orange;
+    border-radius: 50%;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 28px;
+    text-align: center;
+    user-select: none;
+  }
+  
+  .bookmark-icon.bookmarked {
+    color: orange;
+    border-color: orange;
+  }
+  

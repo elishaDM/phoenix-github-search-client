@@ -16,14 +16,11 @@ export class LoginComponent {
   password = '';
 
   constructor(private authService: AuthService, private router: Router) {
-    debugger
   }
 
   onSubmit(): void {
-    debugger;
     this.authService.login(this.username, this.password).subscribe({
       next: (response: any) => {
-        localStorage.setItem('token', response.token);
         this.router.navigate(['search']);
       },
       error: (err) => {

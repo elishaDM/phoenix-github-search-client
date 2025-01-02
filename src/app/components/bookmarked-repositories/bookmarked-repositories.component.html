@@ -1,0 +1,6 @@
+<div class="container mt-5">
+    <h2>Bookmarked repositories</h2>
+    <div class="gallery mt-4 row">
+      <app-repository-item *ngFor="let repo of repositories" [repository]="repo"></app-repository-item>
+    </div>
+  </div>
