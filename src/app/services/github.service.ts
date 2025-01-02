@@ -39,7 +39,6 @@ export class GitHubService {
   isRepositoryBookmarked(repositoryId: number){
     const bookmarkedRepositories = this.bookmarkedRepositories(); // Get the current repositories
     const match = bookmarkedRepositories.findIndex(repo => repo.id == repositoryId);
-    debugger
     return match != -1;
   }
 
